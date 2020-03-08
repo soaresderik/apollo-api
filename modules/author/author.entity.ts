@@ -9,6 +9,11 @@ export default class Author {
     @Field()
     name: string;
 
+    @Field()
+    email: string;
+
     @Field(() => [Post])
     posts: Post[];
+
+    role: string;
 }

@@ -1,4 +1,4 @@
-import { Field, ObjectType, ID } from "type-graphql";
+import { Field, ObjectType, ID, Authorized } from "type-graphql";
 import Author from "../author/author.entity";
 
 
@@ -11,6 +11,7 @@ export class Post {
     title: string;
 
     @Field()
+    @Authorized(["ADMIN"])
     description: string;
 
     @Field(() => Author)
